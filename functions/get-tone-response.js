@@ -12,12 +12,6 @@ module.exports = ({
             text: popByScore(['Boooo! 👿', 'Boooooo! 🤬'], Math.max(anger.score, confident.score)),
         };
     }
-    if (joy && confident) {
-        return {
-            speech: popByScore(['final/claps/claps-cheers.mp3', 'final/claps/claps-cheers2.mp3', 'final/claps/claps-cheers3.mp3'], Math.max(joy.score, confident.score)),
-            text: popByScore(['Wooo~ 😁', 'Whoooo! 😁', 'Whoooooo! 😆'], Math.max(joy.score, confident.score)),
-        };
-    }
     if ((joy || confident) && tentative) { // awkwardly happy/confident
         return {
             speech: popByScore(['final/laugh/awkward/less%20awkward.mp3', 'final/laugh/awkward/more%20awkward.mp3'], Math.max(joy && joy.score, confident && confident.score, tentative.score)),
@@ -42,10 +36,16 @@ module.exports = ({
             text: popByScore(['*Gasp!* 😲', '*Gasp!* 😨'], fear.score),
         };
     }
+    // if (joy) {
+    //     return {
+    //         speech: popByScore(['final/laugh/soft.mp3', 'final/laugh/soft2.mp3', 'final/laugh/soft-medium.mp3', 'final/laugh/soft-medium-largish%20and%20a%20hint%20of%20clapping.mp3'], joy.score),
+    //         text: popByScore(['Hee hee 🙂', 'Hahaha 😊', 'Hahahahaha 😄'], joy.score),
+    //     };
+    // }
     if (joy) {
         return {
-            speech: popByScore(['final/laugh/soft.mp3', 'final/laugh/soft2.mp3', 'final/laugh/soft-medium.mp3', 'final/laugh/soft-medium-largish%20and%20a%20hint%20of%20clapping.mp3'], joy.score),
-            text: popByScore(['Hee hee 🙂', 'Hahaha 😊', 'Hahahahaha 😄'], joy.score),
+            speech: popByScore(['final/claps/claps-cheers.mp3', 'final/claps/claps-cheers2.mp3', 'final/claps/claps-cheers3.mp3'], Math.max(joy.score, confident.score)),
+            text: popByScore(['Wooo~ 😁', 'Whoooo! 😁', 'Whoooooo! 😆'], Math.max(joy.score, confident.score)),
         };
     }
     if (sadness) {
