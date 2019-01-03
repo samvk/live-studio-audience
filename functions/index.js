@@ -7,7 +7,6 @@ const getToneResponse = require('./get-tone-response');
 
 // CHANGEME need to shorten and adjust audio level of some files
 // CHANGEME FINAL::need to upload audio to different server
-// CHANGEME should joy's laughing be replaced with clapping?
 const app = dialogflow({ debug: true });
 
 /** **** TONE ANALYSER ***** */

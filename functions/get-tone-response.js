@@ -24,28 +24,16 @@ module.exports = ({
             text: popByScore(['👏 👏 👏'], Math.max(analytical.score, confident.score)),
         };
     }
-    if (anger) {
-        return {
-            speech: popByScore(['good/angry.mp3'], anger.score),
-            text: popByScore(['Ghrrrrrr! 😡', '*Rabble rabble!* 😠'], anger.score),
-        };
-    }
     if (fear) {
         return {
             speech: popByScore(['gasp/less.mp3', 'gasp/more.mp3'], fear.score),
             text: popByScore(['*Gasp!* 😲', '*Gasp!* 😨'], fear.score),
         };
     }
-    // if (joy) {
-    //     return {
-    //         speech: popByScore(['final/laugh/soft.mp3', 'final/laugh/soft2.mp3', 'final/laugh/soft-medium.mp3', 'final/laugh/soft-medium-largish%20and%20a%20hint%20of%20clapping.mp3'], joy.score),
-    //         text: popByScore(['Hee hee 🙂', 'Hahaha 😊', 'Hahahahaha 😄'], joy.score),
-    //     };
-    // }
-    if (joy) {
+    if (anger) {
         return {
-            speech: popByScore(['final/claps/claps-cheers.mp3', 'final/claps/claps-cheers2.mp3', 'final/claps/claps-cheers3.mp3'], Math.max(joy.score, confident.score)),
-            text: popByScore(['Wooo~ 😁', 'Whoooo! 😁', 'Whoooooo! 😆'], Math.max(joy.score, confident.score)),
+            speech: popByScore(['good/angry.mp3'], anger.score),
+            text: popByScore(['Ghrrrrrr! 😡', '*Rabble rabble!* 😠'], anger.score),
         };
     }
     if (sadness) {
@@ -60,16 +48,28 @@ module.exports = ({
             text: popByScore(['Ahhhhhh.', 'Ohhhhhh'], analytical.score),
         };
     }
-    if (confident) {
-        return {
-            speech: popByScore(['final/claps/claps2%20average-big.mp3', 'final/claps/claps2%20average-bigger.mp3'], confident.score),
-            text: popByScore(['👏 👏 👏', '👏 👏 👏 👏'], confident.score),
-        };
-    }
     if (tentative) {
         return {
             speech: popByScore(['confused/shorter.mp3'], tentative.score),
             text: popByScore(['Wha!? 😟', 'Wha!? 😰'], tentative.score),
+        };
+    }
+    // if (joy) {
+    //     return {
+    //         speech: popByScore(['final/laugh/soft.mp3', 'final/laugh/soft2.mp3', 'final/laugh/soft-medium.mp3', 'final/laugh/soft-medium-largish%20and%20a%20hint%20of%20clapping.mp3'], joy.score),
+    //         text: popByScore(['Hee hee 🙂', 'Hahaha 😊', 'Hahahahaha 😄'], joy.score),
+    //     };
+    // }
+    if (joy) {
+        return {
+            speech: popByScore(['final/claps/claps-cheers.mp3', 'final/claps/claps-cheers2.mp3', 'final/claps/claps-cheers3.mp3'], Math.max(joy.score, confident.score)),
+            text: popByScore(['Wooo~ 😁', 'Whoooo! 😁', 'Whoooooo! 😆'], Math.max(joy.score, confident.score)),
+        };
+    }
+    if (confident) {
+        return {
+            speech: popByScore(['final/claps/claps2%20average-big.mp3', 'final/claps/claps2%20average-bigger.mp3'], confident.score),
+            text: popByScore(['👏 👏 👏', '👏 👏 👏 👏'], confident.score),
         };
     }
     // no tone
