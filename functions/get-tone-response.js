@@ -12,7 +12,7 @@ module.exports = ({
             text: popByScore(['Boooo! 👿', 'Boooooo! 🤬'], Math.max(anger.score, confident.score)),
         };
     }
-    if ((joy || confident) && tentative) { // awkwardly happy/confident
+    if ((joy || confident) && tentative) { // awkwardly happy/confident (can you get both condifent and tentative?)
         return {
             speech: popByScore(['final/laugh/awkward/less%20awkward.mp3', 'final/laugh/awkward/more%20awkward.mp3'], Math.max(joy && joy.score, confident && confident.score, tentative.score)),
             text: popByScore(['Heh.'], Math.max(joy && joy.score, confident && confident.score, tentative.score)),
