@@ -18,10 +18,17 @@ module.exports = ({
             text: popByScore(['Heh.'], Math.max(joy && joy.score, confident && confident.score, tentative.score)),
         };
     }
-    if (analytical && confident) {
+    if (analytical && confident) { // clever
         return {
             speech: popByScore(['final/clap%20-%20analytical.mp3'], Math.max(analytical.score, confident.score)),
             text: popByScore(['👏 👏 👏'], Math.max(analytical.score, confident.score)),
+        };
+    }
+    if (analytical && joy) { // amused
+        // ATM I'm just basing this score on "joy" (as the responses lead more towards that)
+        return {
+            speech: popByScore(['good/oooo%20dear!%20(need%20to%20trim%20opening)123.mp3'], joy.score),
+            text: popByScore(['Ooooooh~ 🤭', 'Ooooooooh~ 🤭'], joy.score),
         };
     }
     if (fear) {
@@ -44,8 +51,8 @@ module.exports = ({
     }
     if (analytical) {
         return {
-            speech: popByScore(['good/ahhhhhh%20I%20see.mp3', 'good/ahhhhhhhh%20I%20see.mp3', 'good/oooo%20dear!%20(need%20to%20trim%20opening)123.mp3'], analytical.score),
-            text: popByScore(['Ahhhhhh.', 'Ohhhhhh'], analytical.score),
+            speech: popByScore(['good/ahhhhhh%20I%20see.mp3', 'good/ahhhhhhhh%20I%20see.mp3'], analytical.score),
+            text: popByScore(['Ahhhhh.', 'Ahhhhhh.', 'Ohhhhhh'], analytical.score),
         };
     }
     if (tentative) {
