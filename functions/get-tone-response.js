@@ -62,8 +62,8 @@ module.exports = ({
     // }
     if (joy) {
         return {
-            speech: popByScore(['final/claps/claps-cheers.mp3', 'final/claps/claps-cheers2.mp3', 'final/claps/claps-cheers3.mp3'], Math.max(joy.score, confident.score)),
-            text: popByScore(['Wooo~ 😁', 'Whoooo! 😁', 'Whoooooo! 😆'], Math.max(joy.score, confident.score)),
+            speech: popByScore(['final/claps/claps-cheers.mp3', 'final/claps/claps-cheers2.mp3', 'final/claps/claps-cheers3.mp3'], joy.score),
+            text: popByScore(['Wooo~ 😁', 'Whoooo! 😁', 'Whoooooo! 😆'], joy.score),
         };
     }
     if (confident) {
