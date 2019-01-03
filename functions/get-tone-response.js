@@ -74,7 +74,8 @@ module.exports = ({
     }
     // no tone
     return {
-        speech: 'Cannot decide tone CHANGEME', // should be murmuring?
-        text: 'Cannot decide tone here CHANGEME', // 🤨😐😕
+        // ??? 🤨😐😕 *mumble* 'mumble/mumble-short.mp3'
+        speech: 'cough/theatre.mp3', // should be murmuring?
+        text: '*cough* 😐',
     };
 };
