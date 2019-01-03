@@ -1,5 +1,5 @@
 const popByScore = (arr, score) => {
-    const relativeIndex = Math.floor(((score - 0.5) * 2) * arr.length);
+    const relativeIndex = Math.min(Math.floor(((score - 0.5) * 2) * arr.length), arr.length - 1);
     return arr[relativeIndex];
 };
 
