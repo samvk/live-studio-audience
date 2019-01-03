@@ -62,7 +62,6 @@ app.intent('actions_intent_NO_INPUT', (conv) => {
     const repromptCount = +conv.arguments.get('REPROMPT_COUNT');
 
     if (repromptCount === 1) {
-        // conv.close(`CHANGEME We're not hearing anything. Sounds like the show is over? Goodbye`);
         intentCancel(conv);
     } else {
         conv.ask(audioSsml('good/crickets%20(a%20little%20too%20high).mp3'));
