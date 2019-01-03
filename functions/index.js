@@ -54,7 +54,7 @@ app.intent('Default Fallback Intent', (conv) => {
         })
         .catch((error) => {
             console.error(error);
-            conv.ask('CHANGEME Oops, something went wrong.');
+            conv.close(`Hmm looks like we're having some technical difficulties on stage. Please try again later.`);
         });
 });
 
