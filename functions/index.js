@@ -6,7 +6,6 @@ const { keyById, audioSsml } = require('./util');
 const getToneResponse = require('./get-tone-response');
 
 // CHANGEME need to shorten and adjust audio level of some files
-// CHANGEME need to make order matter so that the array represents score calue >50 (also might need to fix the logic to handle accessing the 'score' prop in general without erroring)
 // CHANGEME FINAL::need to upload audio to different server
 const app = dialogflow({ debug: true });
 
@@ -47,7 +46,7 @@ app.intent('Default Fallback Intent', (conv) => {
 
             const { speech, text } = getToneResponse(tones);
 
-            conv.ask(new SimpleResponse({ speech, text }));
+            conv.ask(new SimpleResponse({ speech: audioSsml(speech), text }));
         })
         .catch((error) => {
             console.error(error);
