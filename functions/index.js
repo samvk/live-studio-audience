@@ -7,6 +7,7 @@ const getToneResponse = require('./get-tone-response');
 
 // CHANGEME need to shorten and adjust audio level of some files
 // CHANGEME FINAL::need to upload audio to different server
+// CHANGEME should joy's laughing be replaced with clapping?
 const app = dialogflow({ debug: true });
 
 /** **** TONE ANALYSER ***** */
@@ -19,6 +20,10 @@ const toneAnalyzer = new ToneAnalyzerV3({
 const analyzeTone = promisify(toneAnalyzer.tone.bind(toneAnalyzer));
 
 /** **** DIALOGFLOW ***** */
+const intentCancel = (conv) => {
+    conv.close(`CHANGEME What a performance! Come back soon.`);
+};
+
 app.intent('Default Welcome Intent', (conv) => {
     // maybe open with crowd sounds (and curtain?) and end with crowd setling and curtain opening
     conv.ask(`
@@ -55,10 +60,11 @@ app.intent('Default Fallback Intent', (conv) => {
 });
 
 app.intent('actions_intent_NO_INPUT', (conv) => {
-    const finalReprompt = conv.arguments.get('IS_FINAL_REPROMPT');
+    const repromptCount = +conv.arguments.get('REPROMPT_COUNT');
 
-    if (finalReprompt) {
-        conv.close(`CHANGEME We're not hearing anything. Sounds like the show is over? Goodbye`);
+    if (repromptCount === 1) {
+        // conv.close(`CHANGEME We're not hearing anything. Sounds like the show is over? Goodbye`);
+        intentCancel(conv);
     } else {
         conv.ask(audioSsml('good/crickets%20(a%20little%20too%20high).mp3'));
     }
@@ -67,7 +73,7 @@ app.intent('actions_intent_NO_INPUT', (conv) => {
 app.intent('actions_intent_CANCEL', (conv) => {
     // include curtain closing?
     // is it in poor taste to even have a cancel command?
-    conv.close(`CHANGEME What a performance! Come back soon.`);
+    intentCancel(conv);
 });
 
 // Set the DialogflowApp object to handle the HTTPS POST request.
