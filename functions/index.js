@@ -6,7 +6,6 @@ const { keyById, audioSsml } = require('./util');
 const getToneResponse = require('./get-tone-response');
 
 // CHANGEME need to shorten and adjust audio level of some files
-// CHANGEME FINAL::need to upload audio to different server
 // CHANGEME add title, icon, description etc for app
 // CHANGEME come up with all the phrases that should trigger your action
 // CHANGEME add french support

@@ -4,4 +4,4 @@ module.exports.keyById = (arr, id = 'id') => (
 
 // module.exports.randomPop = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-module.exports.audioSsml = (path) => `<speak><audio src='https://samvk.com/audio/${path}' /></speak>`;
+module.exports.audioSsml = (path) => `<speak><audio src='https://studio-audience.firebaseapp.com/audio/${path}' /></speak>`;
