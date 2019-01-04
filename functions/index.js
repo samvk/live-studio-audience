@@ -3,6 +3,7 @@ const { dialogflow, SimpleResponse } = require('actions-on-google');
 const functions = require('firebase-functions');
 const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 const { keyById, audioSsml } = require('./util');
+const { TONE_ANALYZER_API_KEY } = require('./config');
 const getToneResponse = require('./get-tone-response');
 
 // CHANGEME need to shorten and adjust audio level of some files
@@ -13,7 +14,7 @@ const app = dialogflow({ debug: true });
 
 /** **** TONE ANALYSER ***** */
 const toneAnalyzer = new ToneAnalyzerV3({
-    iam_apikey: '***REMOVED***',
+    iam_apikey: TONE_ANALYZER_API_KEY,
     version: '2019-01-02',
     // url: 'https://gateway.watsonplatform.net/tone-analyzer/api', //default
 });
