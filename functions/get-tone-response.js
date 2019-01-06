@@ -13,9 +13,13 @@ module.exports = ({
         };
     }
     if (joy && tentative) { // awkwardly happy
+        // return {
+        //     speech: popByScore(['awkward/awkward-110.mp3', 'awkward/awkward-120.mp3'], Math.max(joy && joy.score, tentative.score)),
+        //     text: popByScore(['Heh.'], Math.max(joy && joy.score, tentative.score)),
+        // };
         return {
-            speech: popByScore(['awkward/awkward-110.mp3', 'awkward/awkward-120.mp3'], Math.max(joy && joy.score, tentative.score)),
-            text: popByScore(['Heh.'], Math.max(joy && joy.score, tentative.score)),
+            speech: popByScore(['clever/clever-110.mp3'], joy.score),
+            text: popByScore(['👏 👏 👏'], joy.score),
         };
     }
     if (analytical && confident) { // clever
