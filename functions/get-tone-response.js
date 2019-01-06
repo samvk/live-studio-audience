@@ -12,10 +12,10 @@ module.exports = ({
             text: popByScore(['Boooo! 👿', 'Boooooo! 🤬'], Math.max(anger.score, confident.score)),
         };
     }
-    if ((joy || confident) && tentative) { // awkwardly happy/confident (can you get both condifent and tentative?)
+    if (joy && tentative) { // awkwardly happy
         return {
-            speech: popByScore(['awkward/awkward-110.mp3', 'awkward/awkward-120.mp3'], Math.max(joy && joy.score, confident && confident.score, tentative.score)),
-            text: popByScore(['Heh.'], Math.max(joy && joy.score, confident && confident.score, tentative.score)),
+            speech: popByScore(['awkward/awkward-110.mp3', 'awkward/awkward-120.mp3'], Math.max(joy && joy.score, tentative.score)),
+            text: popByScore(['Heh.'], Math.max(joy && joy.score, tentative.score)),
         };
     }
     if (analytical && confident) { // clever
