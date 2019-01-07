@@ -6,6 +6,7 @@ const { keyById, audioSsml } = require('./util');
 const { TONE_ANALYZER_API_KEY } = require('./config');
 const getToneResponse = require('./get-tone-response');
 
+// CHANGEME add default-welcome-intent, intentCancel, etc
 // CHANGEME need to shorten and adjust audio level of some files
 // CHANGEME should I have a
 //  // - "welcome back" alt intro?
@@ -27,16 +28,12 @@ const analyzeTone = promisify(toneAnalyzer.tone.bind(toneAnalyzer));
 
 /** **** DIALOGFLOW ***** */
 const intentCancel = (conv) => {
-    conv.close(`CHANGEME What a performance! Come back soon.`);
+    conv.close(`What a performance! Come back soon.`);
 };
 
 app.intent('Default Welcome Intent', (conv) => {
     // maybe open with crowd sounds (and curtain?) and end with crowd setling and curtain opening
-    conv.ask(`
-        <speak>
-            CHANGEME Welcome to <emphasis>your</emphasis> live studio audience! Perform in front of a lively crowd ready to laugh, gasp, and shout! Just Make sure to give the audience time to react. Now get ready, cuz it's your time to shine!
-        </speak>
-    `);
+    conv.ask(`Welcome to your live studio audience! Perform in front of a lively crowd ready to laugh, gasp, and shout! Just Make sure to give the audience time to react. Now get ready, cuz it's your time to shine!`);
 });
 
 app.intent('Default Fallback Intent', (conv) => {
