@@ -12,7 +12,6 @@ const getToneResponse = require('./get-tone-response');
 //  // - "welcome back" alt intro?
 //  // - a "perform again?" prompt (different from the "stop" prompt, it'd trigger on those "the end" prompts)
 // X CHANGEME come up with all the phrases that should trigger your action
-// // - Note: If your Action is a game, you must register for the actions.intent.PLAY_GAME built-in intent in order to be eligible for implicit invocation. (https://developers.google.com/actions/discovery/implicit)
 // (later) CHANGEME add french support
 // X CHANGEME add title, icon, description etc for app
 const app = dialogflow({ debug: true });
