@@ -10,6 +10,7 @@ const getToneResponse = require('./get-tone-response');
 // CHANGEME add title, icon, description etc for app
 // CHANGEME come up with all the phrases that should trigger your action
 // CHANGEME add french support
+// CHANGEME should I have a  - "welcome back" alt intro?  - a "perform again?" prompt (different from the "stop" prompt, it'd trigger on those "the end" prompts) [if I do this I should maybe add in the detailed description of a "the end" command]
 const app = dialogflow({ debug: true });
 
 /** **** TONE ANALYSER ***** */
