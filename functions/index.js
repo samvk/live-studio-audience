@@ -33,7 +33,7 @@ const intentCancel = (conv) => {
 
 app.intent('Default Welcome Intent', (conv) => {
     // maybe open with crowd sounds (and curtain?) and end with crowd setling and curtain opening
-    conv.ask(`Welcome to your live studio audience! Perform in front of a lively crowd ready to laugh, gasp, and shout! Just Make sure to give the audience time to react. Now get ready, cuz it's your time to shine!`);
+    conv.ask(`Welcome to your live studio audience! Perform in front of a lively crowd ready to laugh, gasp, and cheer! Just Make sure to give the audience time to react. Now get ready, cuz it's your time to shine!`);
 });
 
 app.intent('Default Fallback Intent', (conv) => {
