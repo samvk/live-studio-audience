@@ -1,6 +1,6 @@
 {
   "name": "studio-audience",
-  "description": "CHANGEME",
+  "description": "Perform in front of your very own live studio audience, ready to laugh, gasp, and cheer!",
   "author": "SamVK",
   "scripts": {
     "lint": "eslint .",
