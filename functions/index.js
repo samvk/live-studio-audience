@@ -7,10 +7,13 @@ const { TONE_ANALYZER_API_KEY } = require('./config');
 const getToneResponse = require('./get-tone-response');
 
 // CHANGEME need to shorten and adjust audio level of some files
-// CHANGEME add title, icon, description etc for app
+// CHANGEME should I have a
+//  // - "welcome back" alt intro?
+//  // - a "perform again?" prompt (different from the "stop" prompt, it'd trigger on those "the end" prompts)
 // CHANGEME come up with all the phrases that should trigger your action
-// CHANGEME add french support
-// CHANGEME should I have a  - "welcome back" alt intro?  - a "perform again?" prompt (different from the "stop" prompt, it'd trigger on those "the end" prompts) [if I do this I should maybe add in the detailed description of a "the end" command]
+// // - Note: If your Action is a game, you must register for the actions.intent.PLAY_GAME built-in intent in order to be eligible for implicit invocation. (https://developers.google.com/actions/discovery/implicit)
+// (later) CHANGEME add french support
+// X CHANGEME add title, icon, description etc for app
 const app = dialogflow({ debug: true });
 
 /** **** TONE ANALYSER ***** */
