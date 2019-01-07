@@ -10,7 +10,7 @@ const getToneResponse = require('./get-tone-response');
 // CHANGEME should I have a
 //  // - "welcome back" alt intro?
 //  // - a "perform again?" prompt (different from the "stop" prompt, it'd trigger on those "the end" prompts)
-// CHANGEME come up with all the phrases that should trigger your action
+// X CHANGEME come up with all the phrases that should trigger your action
 // // - Note: If your Action is a game, you must register for the actions.intent.PLAY_GAME built-in intent in order to be eligible for implicit invocation. (https://developers.google.com/actions/discovery/implicit)
 // (later) CHANGEME add french support
 // X CHANGEME add title, icon, description etc for app
@@ -71,7 +71,7 @@ app.intent('actions_intent_NO_INPUT', (conv) => {
     if (repromptCount === 1) {
         intentCancel(conv);
     } else {
-        conv.ask(audioSsml('good/crickets%20(a%20little%20too%20high).mp3'));
+        conv.ask(audioSsml('silent/silent-110.mp3'));
     }
 });
 
